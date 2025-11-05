@@ -5,7 +5,7 @@ const resources = {
   en: {
     translation: {
       nav: {
-        bookNow: "Book an Appointment Now",
+        bookNow: "Book Your Move Now",
         phone: "+43 676 6300167",
         email: "office@putzelf.com"
       },
@@ -13,11 +13,11 @@ const resources = {
         title: "Imprint",
         companyNameTitle: "Company name",
         companyNameLine1: "Sebastijan Aleksandar Kerculj",
-        companyNameLine2: "Putzelf",
+        companyNameLine2: "UmzugsELF",
         founderTitle: "Founder and owner",
         founderName: "Sebastijan Aleksandar Kerculj",
         purposeTitle: "Corporate purpose",
-        purposeBody: "Exceptional Cleaning Services.",
+        purposeBody: "Exceptional Moving Services.",
         vatTitle: "VAT number",
         vatValue: "ATU78448967",
         regNoTitle: "Company registration number",
@@ -34,11 +34,11 @@ const resources = {
         membership: "Member of the Vienna Economic Chamber, Vienna Commercial Service Providers Section"
       },
       hero: {
-        title: "Professional Cleaning at Your Fingertips",
-        subtitle: "Book reliable and affordable cleaning services in just a few clicks.",
+        title: "Professional Moving at Your Fingertips",
+        subtitle: "Book reliable and affordable house and office moving in a few clicks.",
         cta: "BOOK HERE",
         jobCta: "Looking for a Job?",
-        jobModalTitle: "Join the Putzelf team",
+        jobModalTitle: "Join the Umzugself team",
         jobModalBody: "Please email us your contact details and application to {{email}}. We’ll get back to you shortly.",
         jobModalEmailCta: "Send email",
         jobModalClose: "Close"
@@ -62,26 +62,26 @@ const resources = {
         }
       },
       services: {
-        standard: { title: "Standard Cleaning", desc: "Quick and efficient regular cleaning." },
-        deep: { title: "Deep Cleaning", desc: "Detailed cleaning for every corner." },
-        office: { title: "Office Cleaning", desc: "Professional cleaning for your office spaces." },
+        standard: { title: "House Moving", desc: "Stress-free moving for apartments and houses." },
+        deep: { title: "Office Moving", desc: "Efficient relocations for offices and teams." },
+        office: { title: "Apartment Moving", desc: "Professional apartment moves with minimal downtime." },
         reliable: "Reliable",
-        reliableLine: "Our cleaners are vetted and trusted by hundreds of customers.",
+        reliableLine: "Our movers are vetted and trusted by hundreds of customers.",
         pricing: "Transparent Pricing",
         easy: "Easy Booking",
-        priceLine: "Just €36/hour, no hidden costs.",
+        priceLine: "Transparent rates, no hidden costs.",
         easyLine: "Book online in less than 2 minutes and relax.",
-        homeTitle: "Home Cleaning",
-        homeDesc: "Fresh, spotless, and welcoming. Our team ensures your home is cleaned with care and precision so you can relax and enjoy your space.",
-        homeCta: "Book Home Cleaning",
-        officeTitle: "Office Cleaning",
-        officeDesc: "A spotless office means a productive day for your team. We keep your workspaces clean, hygienic, and professional.",
-        officeCta: "Book Office Cleaning"
+        homeTitle: "House Moving",
+        homeDesc: "From packing to transport — we handle your home move with care and precision.",
+        homeCta: "Book House Moving",
+        officeTitle: "Office Moving",
+        officeDesc: "Keep your business running while we relocate your workspace efficiently.",
+        officeCta: "Book Office Moving"
       },
       alt: {
-        logo: "putzELF Logo",
-        homeCleaning: "Home Cleaning",
-        officeCleaning: "Office Cleaning"
+        logo: "Umzugself Logo",
+        homeCleaning: "House Moving",
+        officeCleaning: "Office Moving"
       },
       footer: {
         staff: {
@@ -126,22 +126,22 @@ const resources = {
         accept: "Accept"
       },
       home: {
-        title: "Book Your Cleaning",
-        selectType: "Select Cleaning Type",
+        title: "Book Your Move",
+        selectType: "Select Moving Type",
         types: {
-          standard: "House Cleaning",
-          office: "Office Cleaning",
-          apartmentHotel: "Apartment / Hotel"
+          standard: "House Moving",
+          office: "Office Moving",
+          apartmentHotel: "Apartment Move"
         },
         subcategories: {
           title: "Choose Subcategory",
-          intensive: "Intensive",
-          window: "Window"
+          intensive: "Packing",
+          window: "Furniture disassembly"
         },
         descriptions: {
-          standard: "Regular maintenance clean for homes; surfaces, bathrooms, and floors.",
-          office: "Professional office cleaning tailored to workspaces and common areas.",
-          apartmentHotel: "Detailed clean for apartments and hotel rooms between stays."
+          standard: "Home moves including loading, transport, and unloading.",
+          office: "Office moves tailored to workspaces and common areas.",
+          apartmentHotel: "Apartment moves between stays or rentals."
         },
         durationLabel: "Hours (min 3)",
         dateLabel: "Date",
@@ -165,11 +165,11 @@ const resources = {
         }
       },
       calculator: {
-        title: "Price Calculator",
-        subtitle: "Estimate the cost of your cleaning based on duration and extras.",
+        title: "Moving Price Calculator",
+        subtitle: "Estimate your move based on size and options.",
         typeHeading: "Choose a cleaning type",
         subHeading: "Add premium services",
-        durationLabel: "Duration (hours)",
+        areaLabel: "Size (㎡)",
         durationHelp: "Bookings start at 3 hours. Use the arrows to adjust.",
         estimatedTotalLabel: "Estimated total",
         estimatedTotal: "Estimated total: €{{price}}",
@@ -186,7 +186,7 @@ const resources = {
         summary: "Booking Summary",
         date: "Date",
         time: "Time",
-        cleaningType: "Cleaning Type",
+        cleaningType: "Moving Type",
         duration: "Duration",
         durationUnit: "hours",
         price: "Price",
@@ -214,7 +214,7 @@ const resources = {
   de: {
     translation: {
       nav: {
-        bookNow: "Jetzt Termin buchen",
+        bookNow: "Jetzt Umzug buchen",
         phone: "+43 676 6300167",
         email: "office@putzelf.com"
       },
@@ -222,11 +222,11 @@ const resources = {
         title: "Impressum",
         companyNameTitle: "Firmenname",
         companyNameLine1: "Sebastijan Aleksandar Kerculj",
-        companyNameLine2: "Putzelf",
+        companyNameLine2: "UmzugsELF",
         founderTitle: "Gründer und Eigentümer",
         founderName: "Sebastijan Aleksandar Kerculj",
         purposeTitle: "Unternehmensgegenstand",
-        purposeBody: "Außergewöhnliche Reinigungsdienste.",
+        purposeBody: "Außergewöhnliche Umzugsdienstleistungen.",
         vatTitle: "USt-IdNr.",
         vatValue: "ATU78448967",
         regNoTitle: "Firmenbuchnummer",
@@ -261,36 +261,36 @@ const resources = {
         }
       },
       hero: {
-        title: "Professionelle Reinigung auf Knopfdruck",
-        subtitle: "Buchen Sie zuverlässige und preiswerte Reinigungen in wenigen Klicks.",
+        title: "Professionelle Umzugsservices auf Knopfdruck",
+        subtitle: "Buchen Sie zuverlässige und preiswerte Umzüge für Haushalt und Büro.",
         cta: "JETZT BUCHEN",
         jobCta: "Auf Jobsuche?",
-        jobModalTitle: "Werde Teil des Putzelf-Teams",
+        jobModalTitle: "Werde Teil des Umzugself-Teams",
         jobModalBody: "Bitte senden Sie uns Ihre Kontaktdaten und Bewerbung an {{email}}. Wir melden uns in Kürze.",
         jobModalEmailCta: "E-Mail senden",
         jobModalClose: "Schließen"
       },
       services: {
-        standard: { title: "Standardreinigung", desc: "Schnelle und effiziente Regelreinigung." },
-        deep: { title: "Grundreinigung", desc: "Gründliche Reinigung bis in jede Ecke." },
-        office: { title: "Büroreinigung", desc: "Professionelle Reinigung für Ihre Büroräume." },
+        standard: { title: "Haushaltsumzug", desc: "Stressfreie Umzüge für Wohnungen und Häuser." },
+        deep: { title: "Büroumzug", desc: "Effiziente Standortwechsel für Büros und Teams." },
+        office: { title: "Apartmentumzug", desc: "Professionelle Apartmentumzüge mit minimaler Ausfallzeit." },
         reliable: "Zuverlässig",
-        reliableLine: "Unsere Reinigungskräfte sind geprüft und von Hunderten Kund:innen vertrauenswürdig.",
+        reliableLine: "Unsere Umzugsteams sind geprüft und von Hunderten Kund:innen vertrauenswürdig.",
         pricing: "Transparente Preise",
         easy: "Einfache Buchung",
-        priceLine: "Nur €36/Stunde, keine versteckten Kosten.",
-        easyLine: "Online buchen in weniger als 2 Minuten und entspannen.",
-        homeTitle: "Haushaltsreinigung",
-        homeDesc: "Frisch, makellos und einladend. Unser Team reinigt Ihr Zuhause sorgfältig und präzise, damit Sie sich wohlfühlen.",
-        homeCta: "Haushaltsreinigung buchen",
-        officeTitle: "Büroreinigung",
-        officeDesc: "Ein sauberes Büro bedeutet einen produktiven Tag. Wir halten Ihre Arbeitsräume sauber, hygienisch und professionell.",
-        officeCta: "Büroreinigung buchen"
+        priceLine: "Transparente Tarife, keine versteckten Kosten.",
+        easyLine: "In weniger als 2 Minuten online buchen und entspannen.",
+        homeTitle: "Haushaltsumzug",
+        homeDesc: "Von Verpackung bis Transport — wir kümmern uns sorgfältig um Ihren Umzug.",
+        homeCta: "Haushaltsumzug buchen",
+        officeTitle: "Büroumzug",
+        officeDesc: "Geschäft weiterführen, während wir Ihr Büro effizient verlegen.",
+        officeCta: "Büroumzug buchen"
       },
       alt: {
-        logo: "putzELF Logo",
-        homeCleaning: "Haushaltsreinigung",
-        officeCleaning: "Büroreinigung"
+        logo: "Umzugself Logo",
+        homeCleaning: "Haushaltsumzug",
+        officeCleaning: "Büroumzug"
       },
       footer: {
         staff: {
@@ -335,24 +335,24 @@ const resources = {
         accept: "Akzeptieren"
       },
       home: {
-        title: "Reinigung buchen",
-        selectType: "Reinigungsart auswählen",
+        title: "Umzug buchen",
+        selectType: "Umzugsart auswählen",
         types: {
-          standard: "Hausreinigung",
-          office: "Büroreinigung",
-          apartmentHotel: "Apartment / Hotel"
+          standard: "Haushaltsumzug",
+          office: "Büroumzug",
+          apartmentHotel: "Wohnungsumzug"
         },
         subcategories: {
           title: "Unterkategorie wählen",
-          intensive: "Intensiv",
-          window: "Fenster"
+          intensive: "Verpackung",
+          window: "Möbelabbau"
         },
         descriptions: {
-          standard: "Regelmäßige Unterhaltsreinigung: Oberflächen, Bäder, Küche, Böden etc",
-          office: "Professionelle Büroreinigung für Arbeitsplätze, Küche, Gemeinschaftsflächen etc",
-          apartmentHotel: "Gründliche Reinigung nach Check-out und der öffentlichen Bereiche"
+          standard: "Umzüge mit Laden, Transport und Entladen.",
+          office: "Büroumzüge für Arbeitsplätze und Gemeinschaftsflächen.",
+          apartmentHotel: "Wohnungsumzüge zwischen Aufenthalten oder Vermietungen."
         },
-        durationLabel: "Geschätzte Arbeitszeit",
+        durationLabel: "Arbeitszeit (min. 3)",
         dateLabel: "Datum",
         timeLabel: "Uhrzeit",
         renegotiate: "Wir nehmen zur Kenntnis, dass die Dienstleistung nach tatsächlicher Arbeitszeit verrechnet wird",
@@ -374,11 +374,11 @@ const resources = {
         }
       },
       calculator: {
-        title: "Preisrechner",
-        subtitle: "Schätzen Sie die Kosten Ihrer Reinigung basierend auf Dauer und Extras.",
+        title: "Umzugs-Preisrechner",
+        subtitle: "Schätzen Sie Ihren Umzug basierend auf Größe und Optionen.",
         typeHeading: "Reinigungsart wählen",
         subHeading: "Optionale Premium-Services",
-        durationLabel: "Dauer (Stunden)",
+        areaLabel: "Größe (㎡)",
         durationHelp: "Buchungen starten bei 3 Stunden. Verwenden Sie die Pfeile zur Anpassung.",
         estimatedTotalLabel: "Geschätzte Gesamtkosten",
         estimatedTotal: "Geschätzte Gesamtkosten: {{price}} €",
@@ -395,7 +395,7 @@ const resources = {
         summary: "Buchungsübersicht",
         date: "Datum",
         time: "Uhrzeit",
-        cleaningType: "Reinigungsart",
+        cleaningType: "Umzugsart",
         duration: "Dauer",
         durationUnit: "Stunden",
         price: "Preis",

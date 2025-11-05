@@ -7,21 +7,15 @@ const Navbar = () => {
     <nav className="bg-white shadow-md p-4 flex items-center justify-between">
       {/* Logo */}
       <Link to="/" className="flex items-center space-x-2">
-        <img src={logo} alt="PutzELF" className="h-10 w-auto" />
-        <span className="text-xl font-bold text-blue-600">putzELF</span>
+        <img src={logo} alt="Umzugself" className="h-10 w-auto" />
+        <span className="text-xl font-bold text-[#93dc5c]">umzugsELF</span>
       </Link>
 
       {/* Nav Links */}
       <div className="space-x-6">
-        <Link to="/" className="text-gray-700 hover:text-blue-600">
-          Home
-        </Link>
-        <Link to="/search/order" className="text-gray-700 hover:text-blue-600">
+        <a href="https://cal.com/" className="text-gray-700 hover:text-[#93dc5c]">
           Book
-        </Link>
-        <Link to="/about" className="text-gray-700 hover:text-blue-600">
-          About
-        </Link>
+        </a>
       </div>
     </nav>
   );

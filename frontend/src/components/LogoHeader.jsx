@@ -17,14 +17,14 @@ export default function LogoHeader() {
 
       {/* Bigger text */}
       <h1 className="text-6xl font-extrabold text-black">
-        Putz<span style={{ color: "#0097b2" }}>ELF</span>
+        <span style={{ color: "#93dc5c" }}>Umzugs</span>ELF
       </h1>
       <div className="mt-3 flex items-center gap-2">
         <button
           onClick={() => i18n.changeLanguage('en')}
           title="English"
           aria-label="Switch to English"
-          className={`w-8 h-8 flex items-center justify-center rounded-full border text-sm hover:bg-gray-50 ${i18n.language && i18n.language.startsWith('en') ? 'ring-2 ring-[#0097b2]' : ''}`}
+          className={`w-8 h-8 flex items-center justify-center rounded-full border text-sm hover:bg-gray-50 ${i18n.language && i18n.language.startsWith('en') ? 'ring-2 ring-[#93dc5c]' : ''}`}
         >
           <span role="img" aria-label="English flag">🇬🇧</span>
         </button>
@@ -32,7 +32,7 @@ export default function LogoHeader() {
           onClick={() => i18n.changeLanguage('de')}
           title="Deutsch"
           aria-label="Auf Deutsch umschalten"
-          className={`w-8 h-8 flex items-center justify-center rounded-full border text-sm hover:bg-gray-50 ${i18n.language && i18n.language.startsWith('de') ? 'ring-2 ring-[#0097b2]' : ''}`}
+          className={`w-8 h-8 flex items-center justify-center rounded-full border text-sm hover:bg-gray-50 ${i18n.language && i18n.language.startsWith('de') ? 'ring-2 ring-[#93dc5c]' : ''}`}
         >
           <span role="img" aria-label="German flag">🇩🇪</span>
         </button>

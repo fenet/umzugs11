@@ -43,67 +43,70 @@ export default function Imprint() {
     <div className="flex flex-col min-h-screen pb-24 md:pb-0 bg-gray-50">
       {/* Navbar copied from Landing */}
       <nav className="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center space-x-3 md:space-x-6 min-w-0">
-            <img src={logo} alt={t('alt.logo')} className="h-12 md:h-20 w-auto shrink-0" />
-
-            <a
-              href="tel:+436673302277"
-              className="flex flex-col items-center text-[#0097b2] font-semibold hover:underline"
-              aria-label="Call us"
-              onClick={() => trackEvent('Contact_Phone_Click', { contact_method: 'phone', source: 'navbar' })}
-            >
-              <Phone size={24} className="mb-0.5 md:mb-1 md:size-[32px]" />
-              <span className="hidden md:inline text-base text-gray-700">+43 676 6300167</span>
-            </a>
-
-            <a
-              href="mailto:office@putzelf.com"
-              className="flex flex-col items-center text-[#5be3e3] font-semibold hover:underline"
-              aria-label="Email us"
-              onClick={() => trackEvent('Contact_Email_Click', { contact_method: 'email', source: 'navbar' })}
-            >
-              <Mail size={24} className="mb-0.5 md:mb-1 md:size-[32px]" />
-              <span className="hidden md:inline text-base text-gray-700">office@putzelf.com</span>
-            </a>
-          </div>
-
-          <div className="flex items-center gap-2 md:gap-3 shrink-0">
-            <Link
-              to="/book"
-              className="hidden md:block bg-[#0097b2] text-white px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-lg font-semibold shadow-md animate-pulse-button whitespace-nowrap"
-              onClick={() => trackEvent('Navbar_Book_Click', { source: 'navbar_desktop' })}
-            >
-              {t('nav.bookNow')}
-            </Link>
-            <button
-              onClick={() => i18n.changeLanguage('en')}
-              title="English"
-              aria-label="Switch to English"
-              className={`w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full border text-sm md:text-base hover:bg-gray-50 ${i18n.language && i18n.language.startsWith('en') ? 'ring-2 ring-[#0097b2]' : ''}`}
-            >
-              <span role="img" aria-label="English flag">🇬🇧</span>
-            </button>
-            <button
-              onClick={() => i18n.changeLanguage('de')}
-              title="Deutsch"
-              aria-label="Auf Deutsch umschalten"
-              className={`w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full border text-sm md:text-base hover:bg-gray-50 ${i18n.language && i18n.language.startsWith('de') ? 'ring-2 ring-[#0097b2]' : ''}`}
-            >
-              <span role="img" aria-label="German flag">🇩🇪</span>
-            </button>
-          </div>
-          <div className="w-full flex justify-center mt-2 md:hidden">
-            <Link
-              to="/book"
-              className="bg-[#0097b2] text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md animate-pulse-button whitespace-nowrap"
-              onClick={() => trackEvent('Navbar_Book_Click', { source: 'navbar_mobile' })}
-            >
-              {t('nav.bookNow')}
-            </Link>
-          </div>
-        </div>
-      </nav>
+              <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex flex-wrap justify-between items-center gap-2">
+                <div className="flex items-center space-x-3 md:space-x-6 min-w-0">
+                  <img src={logo} alt={t("alt.logo")} className="h-12 md:h-20 w-auto shrink-0" />
+                  <a
+                    href="tel:+436673302277"
+                    className="flex flex-col items-center text-[#93dc5c] font-semibold hover:underline"
+                    aria-label="Call us"
+                    onClick={() => trackEvent("Contact_Phone_Click", { contact_method: "phone", source: "navbar" })}
+                  >
+                    <Phone size={24} className="mb-0.5 md:mb-1 md:size-[32px]" />
+                    <span className="hidden md:inline text-base text-gray-700">+43 676 6300167</span>
+                  </a>
+                  <a
+                    href="mailto:office@putzelf.com"
+                    className="flex flex-col items-center text-[#93dc5c] font-semibold hover:underline"
+                    aria-label="Email us"
+                    onClick={() => trackEvent("Contact_Email_Click", { contact_method: "email", source: "navbar" })}
+                  >
+                    <Mail size={24} className="mb-0.5 md:mb-1 md:size-[32px]" />
+                    <span className="hidden md:inline text-base text-gray-700">office@putzelf.com</span>
+                  </a>
+                </div>
+      
+                <div className="flex items-center gap-2 md:gap-3 shrink-0">
+                  <Link
+                    to="/profile"
+                    className="hidden md:block bg-[#93dc5c] text-black px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-lg font-semibold shadow-md animate-pulse-button whitespace-nowrap"
+                    onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_desktop" })}
+                  >
+                    {t("nav.bookNow")}
+                  </Link>
+                  <button
+                    onClick={() => i18n.changeLanguage("en")}
+                    title="English"
+                    aria-label="Switch to English"
+                    className={`w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full border text-sm md:text-base hover:bg-gray-50 ${
+                      i18n.language && i18n.language.startsWith("en") ? "ring-2 ring-[#93dc5c]" : ""
+                    }`}
+                  >
+                    <span role="img" aria-label="English flag">🇬🇧</span>
+                  </button>
+                  <button
+                    onClick={() => i18n.changeLanguage("de")}
+                    title="Deutsch"
+                    aria-label="Auf Deutsch umschalten"
+                    className={`w-8 h-8 md:w-9 md:h-9 flex items-center justify-center rounded-full border text-sm md:text-base hover:bg-gray-50 ${
+                      i18n.language && i18n.language.startsWith("de") ? "ring-2 ring-[#93dc5c]" : ""
+                    }`}
+                  >
+                    <span role="img" aria-label="German flag">🇩🇪</span>
+                  </button>
+                </div>
+      
+                <div className="w-full flex justify-center mt-2 md:hidden">
+                  <Link
+                    to="/profile"
+                    className="bg-[#93dc5c] text-black px-4 py-2 rounded-lg text-sm font-semibold shadow-md animate-pulse-button whitespace-nowrap"
+                    onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_mobile" })}
+                  >
+                    {t("nav.bookNow")}
+                  </Link>
+                </div>
+              </div>
+            </nav>
 
       {/* Page content */}
       <main className="flex-1 container mx-auto px-6 pt-32 md:pt-40 pb-24">

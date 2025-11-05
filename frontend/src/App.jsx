@@ -3,11 +3,9 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { trackPageview } from "./lib/analytics";
 import Landing from "./pages/Landing";
-import Home from "./pages/Home";
-import Order from "./pages/Order";
-import Search from "./pages/Search";
+// Removed Home/Order/Search routes in favor of external booking
 import Imprint from "./pages/Imprint";
-import Profile from "./pages/Profile";
+// Removed Profile route in favor of external booking
 import Footer from "./components/Footer";
 import LogoHeader from "./components/LogoHeader";
 import PriceCalculator from "./pages/PriceCalculator";
@@ -42,39 +40,11 @@ export default function App() {
       {/* Landing page (full-width, with its own navbar/footer) */}
       <Route path="/" element={<Landing />} />
 
-      {/* Booking / system pages (wrapped with Layout + LogoHeader + Footer) */}
-      <Route
-        path="/book"
-        element={
-          <Layout>
-            <Home />
-          </Layout>
-        }
-      />
-      <Route
-        path="/order/:id"
-        element={
-          <Layout>
-            <Order />
-          </Layout>
-        }
-      />
-      <Route
-        path="/search"
-        element={
-          <Layout>
-            <Search />
-          </Layout>
-        }
-      />
-      <Route 
-      path="/profile" 
-      element={
-        <Layout>
-          <Profile />
-        </Layout>
-        }
-      /> 
+      {/* Redirect legacy internal routes to Cal.com */}
+      <Route path="/book" element={<ExternalRedirect url="https://cal.com/" />} />
+      <Route path="/order/:id" element={<ExternalRedirect url="https://cal.com/" />} />
+      <Route path="/search" element={<ExternalRedirect url="https://cal.com/" />} />
+      <Route path="/profile" element={<ExternalRedirect url="https://cal.com/" />} />
       <Route 
         path="/calculator" 
         element={
@@ -96,6 +66,12 @@ export default function App() {
       />
     </Routes>
   );
+}
+function ExternalRedirect({ url }) {
+  useEffect(() => {
+    window.location.replace(url);
+  }, [url]);
+  return null;
 }
 
 

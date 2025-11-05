@@ -16,18 +16,16 @@ const premiumSubcategories = [
   { key: "window", emoji: "🪟" },
 ];
 
-const MIN_HOURS = 3;
+const MIN_SQM = 10;
 
 
-const getHourlyRate = (typeKey, subcategories) => {
-  if (typeKey === "standard" || typeKey === "apartmentHotel") {
-    const subs = Array.isArray(subcategories) ? subcategories : [];
-    if (subs.includes("intensive") && subs.includes("window")) return 50;
-    if (subs.includes("window")) return 44.9;
-    if (subs.includes("intensive")) return 43.2;
-    return 30;
-  }
-  return 30;
+const getPriceFromSquareMeters = (squareMeters) => {
+  const size = Number(squareMeters) || 0;
+  if (size <= 50) return 800;
+  if (size > 50 && size <= 80) return 1300;
+  if (size > 80 && size <= 100) return 1700;
+  if (size > 100 && size <= 130) return 2000;
+  return 2500;
 };
 
 
@@ -37,23 +35,19 @@ export default function PriceCalculator() {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
   const [form, setForm] = useState({
-    duration: MIN_HOURS,
+    sqm: 50,
     typeKey: "standard",
     subcategories: [],
     renegotiate: false,
   });
 
-  const hourlyRate = useMemo(
-    () => getHourlyRate(form.typeKey, form.subcategories),
-    [form.typeKey, form.subcategories]
-  );
-  const normalizedDuration = useMemo(
-    () => Math.max(MIN_HOURS, Number(form.duration) || MIN_HOURS),
-    [form.duration]
+  const normalizedSqm = useMemo(
+    () => Math.max(MIN_SQM, Number(form.sqm) || MIN_SQM),
+    [form.sqm]
   );
   const totalPrice = useMemo(
-    () => normalizedDuration * hourlyRate,
-    [normalizedDuration, hourlyRate]
+    () => getPriceFromSquareMeters(normalizedSqm),
+    [normalizedSqm]
   );
 
   const chooseType = (key) =>
@@ -70,32 +64,32 @@ export default function PriceCalculator() {
       };
     });
 
-  const incrementDuration = () =>
-    setForm((prev) => ({ ...prev, duration: normalizedDuration + 1 }));
+  const incrementSqm = () =>
+    setForm((prev) => ({ ...prev, sqm: normalizedSqm + 1 }));
 
-  const decrementDuration = () =>
-    setForm((prev) => ({ ...prev, duration: Math.max(MIN_HOURS, normalizedDuration - 1) }));
+  const decrementSqm = () =>
+    setForm((prev) => ({ ...prev, sqm: Math.max(MIN_SQM, normalizedSqm - 1) }));
 
-  const handleDurationChange = (e) => {
+  const handleSqmChange = (e) => {
     const value = Number(e.target.value);
     if (!Number.isNaN(value)) {
-      setForm((prev) => ({ ...prev, duration: Math.max(MIN_HOURS, value) }));
+      setForm((prev) => ({ ...prev, sqm: Math.max(MIN_SQM, value) }));
     }
   };
 
-  const handleDurationKeyDown = (e) => {
+  const handleSqmKeyDown = (e) => {
     if (e.key === "ArrowUp") {
       e.preventDefault();
-      incrementDuration();
+      incrementSqm();
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
-      decrementDuration();
+      decrementSqm();
     }
   };
 
   const resetForm = () =>
     setForm({
-      duration: MIN_HOURS,
+      sqm: 50,
       typeKey: "standard",
       subcategories: [],
       renegotiate: false,
@@ -119,7 +113,7 @@ export default function PriceCalculator() {
             
             <a
               href="tel:+436673302277"
-              className="flex flex-col items-center font-semibold text-[#0097b2] hover:underline"
+              className="flex flex-col items-center font-semibold text-[#93dc5c] hover:underline"
               aria-label="Call us"
               onClick={() =>
                 trackEvent("Contact_Phone_Click", { contact_method: "phone", source: "navbar_calculator" })
@@ -130,7 +124,7 @@ export default function PriceCalculator() {
             </a>
             <a
               href="mailto:office@putzelf.com"
-              className="flex flex-col items-center font-semibold text-[#5be3e3] hover:underline"
+              className="flex flex-col items-center font-semibold text-[#93dc5c] hover:underline"
               aria-label="Email us"
               onClick={() =>
                 trackEvent("Contact_Email_Click", { contact_method: "email", source: "navbar_calculator" })
@@ -142,19 +136,19 @@ export default function PriceCalculator() {
           </div>
 
           <div className="flex shrink-0 items-center gap-2 md:gap-3">
-            <Link
-              to="/profile"
-              className="hidden whitespace-nowrap rounded-lg bg-[#0097b2] px-4 py-2 text-sm font-semibold text-white shadow-md md:block md:px-6 md:py-3 md:text-lg"
+            <a
+              href="https://cal.com/"
+              className="hidden whitespace-nowrap rounded-lg bg-[#93dc5c] px-4 py-2 text-sm font-semibold text-black shadow-md md:block md:px-6 md:py-3 md:text-lg"
               onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_calculator_desktop" })}
             >
               {t("nav.bookNow")}
-            </Link>
+            </a>
             <button
               onClick={() => i18n.changeLanguage("en")}
               title="English"
               aria-label="Switch to English"
               className={`flex h-8 w-8 items-center justify-center rounded-full border text-sm hover:bg-gray-50 md:h-9 md:w-9 md:text-base ${
-                i18n.language?.startsWith("en") ? "ring-2 ring-[#0097b2]" : ""
+                i18n.language?.startsWith("en") ? "ring-2 ring-[#93dc5c]" : ""
               }`}
             >
               <span role="img" aria-label="English flag">
@@ -166,7 +160,7 @@ export default function PriceCalculator() {
               title="Deutsch"
               aria-label="Auf Deutsch umschalten"
               className={`flex h-8 w-8 items-center justify-center rounded-full border text-sm hover:bg-gray-50 md:h-9 md:w-9 md:text-base ${
-                i18n.language?.startsWith("de") ? "ring-2 ring-[#0097b2]" : ""
+                i18n.language?.startsWith("de") ? "ring-2 ring-[#93dc5c]" : ""
               }`}
             >
               <span role="img" aria-label="German flag">
@@ -176,13 +170,13 @@ export default function PriceCalculator() {
           </div>
 
           <div className="mt-2 flex w-full justify-center md:hidden">
-            <Link
-              to="/profile"
-              className="whitespace-nowrap rounded-lg bg-[#0097b2] px-4 py-2 text-sm font-semibold text-white shadow-md"
+            <a
+              href="https://cal.com/"
+              className="whitespace-nowrap rounded-lg bg-[#93dc5c] px-4 py-2 text-sm font-semibold text-black shadow-md"
               onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_calculator_mobile" })}
             >
               {t("nav.bookNow")}
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
@@ -190,7 +184,7 @@ export default function PriceCalculator() {
       <main className="flex flex-1 justify-center px-4 pb-16 pt-32 md:px-6 md:pt-36">
         <div className="flex w-full max-w-5xl flex-col gap-10">
           <header className="text-center space-y-4">
-            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e6fbff] text-[#0097b2]">
+            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#effbea] text-[#93dc5c]">
               <Calculator size={32} />
             </span>
             <h1 className="text-3xl font-bold text-[#000000] md:text-4xl">{t("calculator.title")}</h1>
@@ -200,9 +194,9 @@ export default function PriceCalculator() {
           </header>
 
           <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr),minmax(0,1fr)]">
-            <section className="space-y-8 rounded-2xl border border-[#e0f7f7] bg-white p-5 shadow-lg md:p-6">
+            <section className="space-y-8 rounded-2xl border border-[#e5f4dd] bg-white p-5 shadow-lg md:p-6">
               <div>
-                <h2 className="mb-4 text-lg font-semibold text-[#0097b2]">{t("calculator.typeHeading")}</h2>
+                <h2 className="mb-4 text-lg font-semibold text-[#93dc5c]">{t("calculator.typeHeading")}</h2>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {cleaningTypes.map(({ key, emoji }) => {
                     const selected = form.typeKey === key;
@@ -213,7 +207,7 @@ export default function PriceCalculator() {
                         onClick={() => chooseType(key)}
                         className={`flex flex-col items-center justify-center rounded-xl border p-4 text-sm font-medium transition shadow-sm ${
                           selected
-                            ? "border-[#00b3c1] bg-[#5be3e3] text-black shadow-lg"
+                            ? "border-[#93dc5c] bg-[#93dc5c] text-black shadow-lg"
                             : "bg-gray-50 hover:shadow"
                         }`}
                         aria-pressed={selected}
@@ -228,7 +222,7 @@ export default function PriceCalculator() {
 
               {shouldShowSubcategories && (
                 <div>
-                  <h3 className="mb-3 text-md font-semibold text-[#0097b2]">{t("calculator.subHeading")}</h3>
+                  <h3 className="mb-3 text-md font-semibold text-[#93dc5c]">{t("calculator.subHeading")}</h3>
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                     {premiumSubcategories.map(({ key, emoji }) => {
                       const selected = form.subcategories.includes(key);
@@ -239,7 +233,7 @@ export default function PriceCalculator() {
                           onClick={() => toggleSubcategory(key)}
                           className={`flex items-center justify-center rounded-lg border p-3 text-sm font-medium transition ${
                             selected
-                              ? "border-[#00b3c1] bg-[#5be3e3] text-black shadow"
+                              ? "border-[#93dc5c] bg-[#93dc5c] text-black shadow"
                               : "bg-gray-50 hover:shadow"
                           }`}
                           aria-pressed={selected}
@@ -255,38 +249,37 @@ export default function PriceCalculator() {
               )}
 
               <div>
-                <label htmlFor="duration" className="mb-2 block text-sm font-medium text-gray-700">
-                  {t("calculator.durationLabel")}
+                <label htmlFor="sqm" className="mb-2 block text-sm font-medium text-gray-700">
+                  {t("calculator.areaLabel", { defaultValue: "Size (㎡)" })}
                 </label>
                 <div className="flex items-stretch">
                   <button
                     type="button"
-                    onClick={decrementDuration}
+                    onClick={decrementSqm}
                     className="rounded-l-lg border border-r-0 bg-gray-50 px-4 hover:bg-gray-100"
-                    aria-label="Decrease hours"
+                    aria-label="Decrease square meters"
                   >
                     −
                   </button>
                   <input
-                    id="duration"
-                    name="duration"
+                    id="sqm"
+                    name="sqm"
                     type="number"
-                    min={MIN_HOURS}
-                    value={normalizedDuration}
-                    onChange={handleDurationChange}
-                    onKeyDown={handleDurationKeyDown}
-                    className="w-full border border-gray-300 text-center focus:ring-2 focus:ring-[#5be3e3]"
+                    min={MIN_SQM}
+                    value={normalizedSqm}
+                    onChange={handleSqmChange}
+                    onKeyDown={handleSqmKeyDown}
+                    className="w-full border border-gray-300 text-center focus:ring-2 focus:ring-[#93dc5c]"
                   />
                   <button
                     type="button"
-                    onClick={incrementDuration}
+                    onClick={incrementSqm}
                     className="rounded-r-lg border border-l-0 bg-gray-50 px-4 hover:bg-gray-100"
-                    aria-label="Increase hours"
+                    aria-label="Increase square meters"
                   >
                     +
                   </button>
                 </div>
-                <p className="mt-2 text-xs text-gray-500">{t("calculator.durationHelp")}</p>
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-3">
@@ -304,27 +297,27 @@ export default function PriceCalculator() {
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="text-sm font-semibold text-[#0097b2] hover:underline"
+                  className="text-sm font-semibold text-[#93dc5c] hover:underline"
                 >
                   {t("calculator.resetBtn")}
                 </button>
               </div>
             </section>
 
-            <aside className="h-fit space-y-5 rounded-2xl border border-[#e0f7f7] bg-white p-5 shadow-lg md:p-6">
-              <div className="rounded-xl bg-[#0097b2] p-5 text-white shadow-md">
+            <aside className="h-fit space-y-5 rounded-2xl border border-[#e5f4dd] bg-white p-5 shadow-lg md:p-6">
+              <div className="rounded-xl bg-[#93dc5c] p-5 text-black shadow-md">
                 <p className="text-sm uppercase tracking-wide opacity-80">
                   {t("calculator.estimatedTotalLabel")}
                 </p>
                 <p className="mt-2 text-3xl font-bold md:text-4xl">€{totalPrice.toFixed(2)}</p>
-                <p className="mt-3 text-sm text-[#d8f7fb]">
-                  {t("calculator.hourlyRate", { rate: hourlyRate.toFixed(2) })}
+                <p className="mt-3 text-sm opacity-80">
+                  {t("calculator.areaLabel", { defaultValue: "Size (㎡)" })}: {normalizedSqm}㎡
                 </p>
               </div>
 
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>
-                  <strong>{t("home.durationLabel")}:</strong> {normalizedDuration}h
+                  <strong>{t("calculator.areaLabel", { defaultValue: "Size (㎡)" })}:</strong> {normalizedSqm}㎡
                 </li>
                 <li>
                   <strong>{t("calculator.typeHeading")}:</strong> {t(`home.types.${form.typeKey}`)}
@@ -337,13 +330,13 @@ export default function PriceCalculator() {
                 </li>
               </ul>
 
-              <Link
-                to="/profile"
-                className="block rounded-xl bg-[#5be3e3] py-3 text-center font-semibold text-black transition hover:bg-[#48c9c9]"
+              <a
+                href="https://cal.com/"
+                className="block rounded-xl bg-[#93dc5c] py-3 text-center font-semibold text-black transition hover:opacity-90"
                 onClick={() => trackEvent("Calculator_Book_Now_Click")}
               >
                 {t("calculator.cta")}
-              </Link>
+              </a>
 
               <p className="text-xs text-gray-500">{t("calculator.disclaimer")}</p>
             </aside>
@@ -501,7 +494,7 @@ export default function PriceCalculator() {
         </div>
 
         <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Putzelf — Alle Rechte vorbehalten.
+          © {new Date().getFullYear()} umzugsELF — Alle Rechte vorbehalten.
         </div>
       </footer>
     </div>
