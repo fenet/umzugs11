@@ -261,8 +261,8 @@ const resources = {
         }
       },
       hero: {
-        title: "Professionelle Umzugsservices auf Knopfdruck",
-        subtitle: "Buchen Sie zuverlässige und preiswerte Umzüge für Haushalt und Büro.",
+        title: "Professionelles Umzugsservices auf Knopfdruck",
+        subtitle: "Buchen Sie zuverlässige und preiswerte Umzüge, Entrümpelungen für Haushalt und Büro",
         cta: "JETZT BUCHEN",
         jobCta: "Auf Jobsuche?",
         jobModalTitle: "Werde Teil des Umzugself-Teams",
@@ -271,8 +271,8 @@ const resources = {
         jobModalClose: "Schließen"
       },
       services: {
-        standard: { title: "Haushaltsumzug", desc: "Stressfreie Umzüge für Wohnungen und Häuser." },
-        deep: { title: "Büroumzug", desc: "Effiziente Standortwechsel für Büros und Teams." },
+        standard: { title: "Entrümpelungen", desc: "Professionelle Entrümpelungen für Ihre Adresse" },
+        deep: { title: "Büroumzug", desc: "Effizienter Standortwechsel Ihr Business" },
         office: { title: "Apartmentumzug", desc: "Professionelle Apartmentumzüge mit minimaler Ausfallzeit." },
         reliable: "Zuverlässig",
         reliableLine: "Unsere Umzugsteams sind geprüft und von Hunderten Kund:innen vertrauenswürdig.",

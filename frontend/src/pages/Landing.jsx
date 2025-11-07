@@ -59,19 +59,19 @@ export default function Landing() {
               <span className="hidden md:inline text-base text-gray-700">+43 676 6300167</span>
             </a>
             <a
-              href="mailto:office@putzelf.com"
+              href="mailto:office@umzugself.com"
               className="flex flex-col items-center text-[#93dc5c] font-semibold hover:underline"
               aria-label="Email us"
               onClick={() => trackEvent("Contact_Email_Click", { contact_method: "email", source: "navbar" })}
             >
               <Mail size={24} className="mb-0.5 md:mb-1 md:size-[32px]" />
-              <span className="hidden md:inline text-base text-gray-700">office@putzelf.com</span>
+              <span className="hidden md:inline text-base text-gray-700">office@umzugself.com</span>
             </a>
           </div>
 
           <div className="flex items-center gap-2 md:gap-3 shrink-0">
             <a
-              href="https://cal.com/"
+              href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
               className="hidden md:block bg-[#93dc5c] text-black px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-lg font-semibold shadow-md animate-pulse-button whitespace-nowrap"
               onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_desktop" })}
             >
@@ -101,7 +101,7 @@ export default function Landing() {
 
           <div className="w-full flex justify-center mt-2 md:hidden">
             <a
-              href="https://cal.com/"
+              href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
               className="bg-[#93dc5c] text-black px-4 py-2 rounded-lg text-sm font-semibold shadow-md animate-pulse-button whitespace-nowrap"
               onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_mobile" })}
             >
@@ -116,7 +116,7 @@ export default function Landing() {
         <p className="text-lg text-gray-700 max-w-2xl mb-8">{t("hero.subtitle")}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="https://cal.com/"
+            href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
             className="bg-[#93dc5c] text-black px-10 py-4 rounded-xl text-xl font-semibold hover:shadow-lg hover:scale-105 transition"
             onClick={() => trackEvent("Landing_CTA_Click", { cta: "hero_book_here" })}
           >
@@ -145,7 +145,7 @@ export default function Landing() {
       <section className="max-w-6xl mx-auto px-6 py-16 space-y-12">
         <div className="grid sm:grid-cols-3 gap-8">
   <a
-    href="https://cal.com/"
+    href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
     className="bg-gradient-to-br from-[#a7e87a] to-[#6bbf3e] text-black font-semibold rounded-2xl p-8 text-center hover:scale-105 hover:shadow-xl transition"
     onClick={() => trackEvent("Service_Standard_Click", { service_type: "Standard", source: "landing_grid" })}
   >
@@ -154,7 +154,7 @@ export default function Landing() {
   </a>
 
   <a
-    href="https://cal.com/"
+    href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
     className="bg-gradient-to-br from-[#9ee06c] to-[#5ba934] text-black font-semibold rounded-2xl p-8 text-center hover:scale-105 hover:shadow-xl transition"
     onClick={() => trackEvent("Service_Deep_Click", { service_type: "Deep", source: "landing_grid" })}
   >
@@ -163,7 +163,7 @@ export default function Landing() {
   </a>
 
   <a
-    href="https://cal.com/"
+    href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
     className="bg-gradient-to-br from-[#b2f07f] to-[#7ac745] text-black font-semibold rounded-2xl p-8 text-center hover:scale-105 hover:shadow-xl transition"
     onClick={() => trackEvent("Service_Office_Click", { service_type: "Office", source: "landing_grid" })}
   >
@@ -205,7 +205,7 @@ export default function Landing() {
             <h3 className="text-3xl font-bold text-[#000000]">{t("services.homeTitle")}</h3>
             <p className="text-gray-600 text-lg">{t("services.homeDesc")}</p>
             <a
-              href="https://cal.com/"
+              href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
               className="inline-block bg-[#93dc5c] text-black px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition"
               onClick={() => trackEvent("Service_Home_Click", { service_type: "Home", source: "premium_section" })}
             >
@@ -219,7 +219,7 @@ export default function Landing() {
             <h3 className="text-3xl font-bold text-[#000000]">{t("services.officeTitle")}</h3>
             <p className="text-gray-600 text-lg">{t("services.officeDesc")}</p>
             <a
-              href="https://cal.com/"
+              href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
               className="inline-block bg-[#93dc5c] text-black px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg hover:scale-105 transition"
               onClick={() => trackEvent("Service_Office_Premium_Click", { service_type: "Office", source: "premium_section" })}
             >
@@ -399,11 +399,11 @@ export default function Landing() {
               {t("hero.jobModalTitle")}
             </h3>
             <p className="text-gray-600">
-              {t("hero.jobModalBody", { email: "office@putzelf.com" })}
+              {t("hero.jobModalBody", { email: "office@umzugself.com" })}
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="mailto:office@putzelf.com"
+                href="mailto:office@umzugself.com"
                 className="flex-1 inline-flex items-center justify-center bg-[#0097b2] text-white font-semibold px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition"
                 onClick={() => trackEvent("Job_Modal_Email_Click", { source: "landing_modal" })}
               >

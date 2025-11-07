@@ -137,7 +137,7 @@ export default function PriceCalculator() {
 
           <div className="flex shrink-0 items-center gap-2 md:gap-3">
             <a
-              href="https://cal.com/"
+              href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
               className="hidden whitespace-nowrap rounded-lg bg-[#93dc5c] px-4 py-2 text-sm font-semibold text-black shadow-md md:block md:px-6 md:py-3 md:text-lg"
               onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_calculator_desktop" })}
             >
@@ -171,7 +171,7 @@ export default function PriceCalculator() {
 
           <div className="mt-2 flex w-full justify-center md:hidden">
             <a
-              href="https://cal.com/"
+              href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
               className="whitespace-nowrap rounded-lg bg-[#93dc5c] px-4 py-2 text-sm font-semibold text-black shadow-md"
               onClick={() => trackEvent("Navbar_Book_Click", { source: "navbar_calculator_mobile" })}
             >
@@ -331,7 +331,7 @@ export default function PriceCalculator() {
               </ul>
 
               <a
-                href="https://cal.com/"
+                href="https://cal.com/sebastijan-kerculj-3wvhet/secret"
                 className="block rounded-xl bg-[#93dc5c] py-3 text-center font-semibold text-black transition hover:opacity-90"
                 onClick={() => trackEvent("Calculator_Book_Now_Click")}
               >

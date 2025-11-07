@@ -13,7 +13,7 @@ const Navbar = () => {
 
       {/* Nav Links */}
       <div className="space-x-6">
-        <a href="https://cal.com/" className="text-gray-700 hover:text-[#93dc5c]">
+        <a href="https://cal.com/sebastijan-kerculj-3wvhet/secret" className="text-gray-700 hover:text-[#93dc5c]">
           Book
         </a>
       </div>

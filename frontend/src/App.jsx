@@ -41,10 +41,10 @@ export default function App() {
       <Route path="/" element={<Landing />} />
 
       {/* Redirect legacy internal routes to Cal.com */}
-      <Route path="/book" element={<ExternalRedirect url="https://cal.com/" />} />
-      <Route path="/order/:id" element={<ExternalRedirect url="https://cal.com/" />} />
-      <Route path="/search" element={<ExternalRedirect url="https://cal.com/" />} />
-      <Route path="/profile" element={<ExternalRedirect url="https://cal.com/" />} />
+      <Route path="/book" element={<ExternalRedirect url="https://cal.com/sebastijan-kerculj-3wvhet/secret" />} />
+      <Route path="/order/:id" element={<ExternalRedirect url="https://cal.com/sebastijan-kerculj-3wvhet/secret" />} />
+      <Route path="/search" element={<ExternalRedirect url="https://cal.com/sebastijan-kerculj-3wvhet/secret" />} />
+      <Route path="/profile" element={<ExternalRedirect url="https://cal.com/sebastijan-kerculj-3wvhet/secret" />} />
       <Route 
         path="/calculator" 
         element={
