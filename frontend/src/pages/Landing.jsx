@@ -356,7 +356,7 @@ export default function Landing() {
                   </a>
                 </li>
                 <li>
-                  <a href="/files/Bestandsliste.pdf" download className="hover:text-gray-900 transition-colors">
+                  <a href="/files/Datenschutzbestimmungen.pdf" download className="hover:text-gray-900 transition-colors">
                     {t("footer.connect.links.privacy")}
                   </a>
                 </li>

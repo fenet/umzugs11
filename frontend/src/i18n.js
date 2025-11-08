@@ -105,7 +105,7 @@ const resources = {
           title: "Customers",
           links: {
             serviceContract: "Service Contract",
-            cleaningStandards: "Cleaning Standards",
+            cleaningStandards: "Moving Standards",
             priceList: "Price List",
             calculator: "Price Calculator"
           }
@@ -314,7 +314,7 @@ const resources = {
           title: "Kunden",
           links: {
             serviceContract: "Servicevertrag",
-            cleaningStandards: "Reinigungsstandards",
+            cleaningStandards: "Umzugsstandards",
             priceList: "Preisliste",
             calculator: "Preiskalkulator"
           }
