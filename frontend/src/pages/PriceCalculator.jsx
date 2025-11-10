@@ -123,7 +123,7 @@ export default function PriceCalculator() {
               <span className="hidden text-base text-gray-700 md:inline">+43 676 6300167</span>
             </a>
             <a
-              href="mailto:office@putzelf.com"
+              href="mailto:office@umzugself.com"
               className="flex flex-col items-center font-semibold text-[#93dc5c] hover:underline"
               aria-label="Email us"
               onClick={() =>
@@ -131,7 +131,7 @@ export default function PriceCalculator() {
               }
             >
               <Mail size={24} className="mb-0.5 md:mb-1 md:size-[32px]" />
-              <span className="hidden text-base text-gray-700 md:inline">office@putzelf.com</span>
+              <span className="hidden text-base text-gray-700 md:inline">office@umzugself.com</span>
             </a>
           </div>
 
@@ -393,11 +393,14 @@ export default function PriceCalculator() {
                   {t("footer.partners.links.serviceContract")}
                 </a>
               </li>
-              <li>
-                <a href="/files/Subvertrag.pdf" download className="transition-colors hover:text-gray-900">
-                  {t("footer.partners.links.subcontract")}
-                </a>
-              </li>
+              {/* 
+<li>
+  <a href="/files/Subvertrag.pdf" download className="hover:text-gray-900 transition-colors">
+    {t("footer.partners.links.subcontract")}
+  </a>
+</li>
+*/}
+
             </ul>
           </div>
 

@@ -74,9 +74,9 @@ const resources = {
         homeTitle: "House Moving",
         homeDesc: "From packing to transport — we handle your home move with care and precision.",
         homeCta: "Book House Moving",
-        officeTitle: "Office Moving",
-        officeDesc: "Keep your business running while we relocate your workspace efficiently.",
-        officeCta: "Book Office Moving"
+        officeTitle: "House Moving",
+        officeDesc: "Stress-free moving for apartments and houses.",
+        officeCta: "Book House Moving"
       },
       alt: {
         logo: "Umzugself Logo",
@@ -225,7 +225,7 @@ const resources = {
         companyNameLine2: "UmzugsELF",
         founderTitle: "Gründer und Eigentümer",
         founderName: "Sebastijan Aleksandar Kerculj",
-        purposeTitle: "Unternehmensgegenstand",
+        purposeTitle: "werk u. dienstleistung",
         purposeBody: "Außergewöhnliche Umzugsdienstleistungen.",
         vatTitle: "USt-IdNr.",
         vatValue: "ATU78448967",
@@ -283,9 +283,9 @@ const resources = {
         homeTitle: "Haushaltsumzug",
         homeDesc: "Von Verpackung bis Transport — wir kümmern uns sorgfältig um Ihren Umzug.",
         homeCta: "Haushaltsumzug buchen",
-        officeTitle: "Büroumzug",
-        officeDesc: "Geschäft weiterführen, während wir Ihr Büro effizient verlegen.",
-        officeCta: "Büroumzug buchen"
+        officeTitle: "Entrümpelungen",
+        officeDesc: "Professionelle Entrümpelungen für Ihre Adresse",
+        officeCta: "Entrümpelungen buchen"
       },
       alt: {
         logo: "Umzugself Logo",
@@ -386,7 +386,7 @@ const resources = {
         premiumNotice: "Premium-Extras beeinflussen den Stundensatz.",
         renegotiateLabel: "Nachverhandlung erlauben, falls mehr Zeit nötig ist",
         resetBtn: "Auswahl zurücksetzen",
-        cta: "Jetzt Reinigungskraft auswählen",
+        cta: "Umzugsprofi wählen",
         disclaimer: "Dies ist eine Schätzung. Der finale Preis wird bei der Buchung bestätigt."
       },
       order: {

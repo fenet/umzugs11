@@ -56,13 +56,13 @@ export default function Imprint() {
                     <span className="hidden md:inline text-base text-gray-700">+43 676 6300167</span>
                   </a>
                   <a
-                    href="mailto:office@putzelf.com"
+                    href="mailto:office@umzugself.com"
                     className="flex flex-col items-center text-[#93dc5c] font-semibold hover:underline"
                     aria-label="Email us"
                     onClick={() => trackEvent("Contact_Email_Click", { contact_method: "email", source: "navbar" })}
                   >
                     <Mail size={24} className="mb-0.5 md:mb-1 md:size-[32px]" />
-                    <span className="hidden md:inline text-base text-gray-700">office@putzelf.com</span>
+                    <span className="hidden md:inline text-base text-gray-700">office@umzugself.com</span>
                   </a>
                 </div>
       
@@ -206,11 +206,14 @@ export default function Imprint() {
                   {t("footer.partners.links.serviceContract")}
                 </a>
               </li>
-              <li>
-                <a href="/files/Subvertrag.pdf" download className="hover:text-gray-900 transition-colors">
-                  {t("footer.partners.links.subcontract")}
-                </a>
-              </li>
+              {/* 
+<li>
+  <a href="/files/Subvertrag.pdf" download className="hover:text-gray-900 transition-colors">
+    {t("footer.partners.links.subcontract")}
+  </a>
+</li>
+*/}
+
             </ul>
           </div>
 
@@ -290,7 +293,7 @@ export default function Imprint() {
         </div>
 
         <div className="border-t border-gray-200 mt-8 py-4 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} Putzelf — Alle Rechte vorbehalten.
+          © {new Date().getFullYear()} umzugsELF — Alle Rechte vorbehalten.
         </div>
       </footer>
 

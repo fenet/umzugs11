@@ -281,11 +281,14 @@ export default function Landing() {
                   {t("footer.partners.links.serviceContract")}
                 </a>
               </li>
-              <li>
-                <a href="/files/Subvertrag.pdf" download className="hover:text-gray-900 transition-colors">
-                  {t("footer.partners.links.subcontract")}
-                </a>
-              </li>
+              {/* 
+<li>
+  <a href="/files/Subvertrag.pdf" download className="hover:text-gray-900 transition-colors">
+    {t("footer.partners.links.subcontract")}
+  </a>
+</li>
+*/}
+
             </ul>
           </div>
 
